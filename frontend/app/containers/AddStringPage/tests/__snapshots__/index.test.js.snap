@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddStringPage /> should render and match the snapshot 1`] = `
+<div
+  class="AddStringPage__AddStringWrapper-vg9nel-0 bcMePG"
+>
+  <h3
+    class="H3-sc-1nwhpi5-0 dQPBtj"
+  >
+    <span>
+      Add A String!
+    </span>
+  </h3>
+  <h3
+    class="H3-sc-1nwhpi5-0 dQPBtj"
+  >
+    <span>
+      Uh-Oh, No strings found. Try again later.
+    </span>
+  </h3>
+  <form
+    class="Form-oznt7c-0 ghbJcy"
+  >
+    <input
+      autocomplete="off"
+      class="Input-sc-1pkdwb8-0 gjeXFg"
+      data-testid="input"
+      name="string"
+      value=""
+    />
+    <button
+      class="Button-sc-1odvyvb-0 gBWjGq"
+      data-testid="submit"
+      type="submit"
+    >
+      <span>
+        ADD
+      </span>
+    </button>
+  </form>
+</div>
+`;

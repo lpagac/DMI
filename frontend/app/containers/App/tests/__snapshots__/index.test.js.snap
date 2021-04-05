@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should render and match the snapshot 1`] = `
+<div>
+  <NavBar />
+  <ForwardRef>
+    <HelmetWrapper
+      defaultTitle="Strings App"
+      defer={true}
+      encodeSpecialCharacters={true}
+      titleTemplate="Strings App Take Home"
+    >
+      <meta
+        content="A Strings app take home."
+        name="description"
+      />
+    </HelmetWrapper>
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/strings"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/strings/add"
+      />
+      <Redirect
+        to="/"
+      />
+    </Switch>
+    <GlobalStyleComponent />
+  </ForwardRef>
+</div>
+`;

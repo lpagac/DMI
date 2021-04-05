@@ -1,0 +1,16 @@
+{
+  "app.components.ListItem.header": "This is the ListItem component!",
+  "app.components.NavBar.addString": "Add String",
+  "app.components.NavBar.allStrings": "Strings",
+  "app.components.NavBar.home": "Home",
+  "app.components.StringsSection.error": "Uh-Oh, No strings found. Try again later.",
+  "app.containers.AddStringPage.error": "Unable to add string. Please check your input and try again.",
+  "app.containers.AddStringPage.header": "Add A String!",
+  "app.containers.AddStringPage.invalidInput": "Try adding some text!",
+  "app.containers.AddStringPage.submit": "ADD",
+  "app.containers.AddStringPage.success": "Nice string! Add some more!",
+  "app.containers.HomePage.header": "Check out our latest strings!",
+  "app.containers.HomePage.subHeader": "Limited time only... Add your own string!",
+  "app.containers.NotFoundPage.header": "This is the NotFoundPage container!",
+  "app.containers.StringsPage.header": "Pretty sweet collection of strings right?"
+}
