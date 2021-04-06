@@ -2,11 +2,11 @@
 
 exports[`<NavBar /> Should render and match the snapshot 1`] = `
 <nav
-  class="Wrapper-sc-1tltayn-0 hQGFyS"
+  class="Wrapper-sc-1tltayn-0 fVncrh"
 >
   <div>
     <a
-      class="StyledNavLink-p1y3ih-0 VejsO"
+      class="StyledNavLink-p1y3ih-0 leKBgC"
       href="/strings"
     >
       <span>
@@ -17,7 +17,7 @@ exports[`<NavBar /> Should render and match the snapshot 1`] = `
   <div>
     <a
       aria-current="page"
-      class="StyledNavLink-p1y3ih-0 VejsO active"
+      class="StyledNavLink-p1y3ih-0 leKBgC active"
       href="/"
       style="background-color: rgb(114, 9, 183);"
     >
@@ -28,7 +28,7 @@ exports[`<NavBar /> Should render and match the snapshot 1`] = `
   </div>
   <div>
     <a
-      class="StyledNavLink-p1y3ih-0 VejsO"
+      class="StyledNavLink-p1y3ih-0 leKBgC"
       href="/strings/add"
     >
       <span>

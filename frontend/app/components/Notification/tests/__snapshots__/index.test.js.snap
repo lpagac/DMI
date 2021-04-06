@@ -2,6 +2,6 @@
 
 exports[`<Notification /> Should render and match the snapshot 1`] = `
 <h3
-  class="Notification-sc-1wuue35-0 YfSYQ"
+  class="Notification-sc-1wuue35-0 fgRyTT"
 />
 `;

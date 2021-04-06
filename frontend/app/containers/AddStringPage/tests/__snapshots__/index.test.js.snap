@@ -5,14 +5,14 @@ exports[`<AddStringPage /> should render and match the snapshot 1`] = `
   class="AddStringPage__AddStringWrapper-vg9nel-0 bcMePG"
 >
   <h3
-    class="H3-sc-1nwhpi5-0 kNbuJo"
+    class="H3-sc-1nwhpi5-0 dWPUMg"
   >
     <span>
       Add A String!
     </span>
   </h3>
   <form
-    class="Form-oznt7c-0 ghbJcy"
+    class="Form-oznt7c-0 bTNXiq"
   >
     <input
       autocomplete="off"
@@ -22,7 +22,7 @@ exports[`<AddStringPage /> should render and match the snapshot 1`] = `
       value=""
     />
     <button
-      class="Button-sc-1odvyvb-0 gBWjGq"
+      class="Button-sc-1odvyvb-0 efDDQi"
       data-testid="submit"
       type="submit"
     >

@@ -5,21 +5,21 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
   class="HomePage__Wrapper-i81cdn-0 ljYXSh"
 >
   <h1
-    class="H1-tncdg6-0 kWlXoI"
+    class="H1-tncdg6-0 hkBkQv"
   >
     <span>
       Check out our latest strings!
     </span>
   </h1>
   <h3
-    class="H3-sc-1nwhpi5-0 kNbuJo"
+    class="H3-sc-1nwhpi5-0 dWPUMg"
   >
     <span>
       Limited time only... Add your own string!
     </span>
   </h3>
   <a
-    class="StyledLink-sc-1nstbb3-0 HasWz"
+    class="StyledLink-sc-1nstbb3-0 ciWPTK"
     exact="true"
     href="/strings/add"
   >

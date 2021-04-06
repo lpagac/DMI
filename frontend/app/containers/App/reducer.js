@@ -61,12 +61,7 @@ const appReducer = (state = initialState, action) =>
       }
 
       case ADD_STRING_SUCCESS: {
-        const { id, string } = action;
-        if (draft.strings) {
-          draft.strings.unshift({ id, string });
-        } else {
-          draft.strings = action.strings;
-        }
+        draft.strings = action.strings;
         draft.addingStringSuccess = true;
         draft.addingString = false;
         draft.addingStringError = false;
