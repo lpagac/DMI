@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const Form = styled.form`
-  width: 800px;
-  height: 200px;
-  margin: 40px auto;
+  width: 80vw;
+  height: 20vh;
+  margin: 2.5rem auto;
   text-align: center;
 `;
 

@@ -7,8 +7,8 @@
 import styled from 'styled-components';
 
 const Notification = styled.h3`
-  font-size: 30px;
-  margin: 10px;
+  font-size: 2rem;
+  margin: 1rem;
   background-color: ${props => (props.success ? '#70e000' : '#f94144')};
   opacity: 0.3;
   color: ${props => (props.success ? '#6c757d' : '#343a40')};

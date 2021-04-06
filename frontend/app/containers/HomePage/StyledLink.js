@@ -5,7 +5,7 @@ export default styled(Link)`
   background-color: #70e000;
   color: #343a40;
   border-radius: 7px;
-  font-size: 30px;
+  font-size: 2rem;
   padding: 10px;
   text-align: center;
   text-decoration: none;

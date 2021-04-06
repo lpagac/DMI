@@ -6,7 +6,7 @@ const Wrapper = styled.nav`
   align-items: center;
   position: sticky;
   top: 0;
-  min-height: 60px;
+  min-height: 3rem;
   background: #fff;
   border-bottom: 1px solid #dfe1e4;
 `;

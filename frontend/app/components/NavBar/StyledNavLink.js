@@ -2,8 +2,8 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default styled(NavLink)`
-  font-size: 25px;
-  margin: 0 40px;
+  font-size: 1.6rem;
+  margin: 0 2rem;
   padding: 5px 5px;
   user-select: none;
   text-decoration: none;
