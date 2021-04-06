@@ -22,7 +22,7 @@ export function loadStrings() {
 /**
  * Dispatched when the strings are loaded by the request saga
  *
- * @param  {array} strings array of strings from db
+ * @param  {array} strings array of strings from server
  *
  * @return {object}      An action object with a type of LOAD_STRINGS_SUCCESS passing the strings
  */
@@ -101,11 +101,10 @@ export function stringAddingError(error) {
 }
 
 /**
- * Dispatched when an error success occurs when trying to post a string
+ * Dispatched when an error or success occurs when trying to post a string
  *
- * @param  {object}  The error
  *
- * @return {object} An action object with a type of ADD_STRING_ERROR, passes the error message
+ * @return {object} An action object with a type of CLEAR_ADD_NOTIFICATIONS
  */
 
 export function clearNotifications() {

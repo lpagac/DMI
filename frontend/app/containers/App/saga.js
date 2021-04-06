@@ -70,7 +70,7 @@ export function* addString(action) {
   }
 }
 
-/** post new string watcher */
+/** add new string watcher */
 
 export function* watchAddString() {
   yield takeEvery(ADD_STRING, addString);

@@ -1,6 +1,6 @@
 /**
  *
- * StringsPage
+ * StringsPage display current list of all strings at '/strings' route
  *
  */
 

@@ -1,10 +1,11 @@
 /**
  *
- * AddStringPage
+ * AddStringPage display current strings if any and form to add string at '/strings/add' route
  *
  */
 
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -40,6 +41,7 @@ const AddStringWrapper = styled.div`
   margin: auto;
   padding: 40px 0;
 `;
+
 export function AddStringPage({
   handleAddString,
   fetchStrings,
@@ -62,6 +64,10 @@ export function AddStringPage({
 
   return (
     <AddStringWrapper>
+      <Helmet>
+        <title>Add String Page</title>
+        <meta name="description" content="Strings app adding string page" />
+      </Helmet>
       <H3>
         <FormattedMessage {...messages.header} />
       </H3>
