@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Notification /> Should render and match the snapshot 1`] = `
+<h3
+  class="Notification-sc-1wuue35-0 YfSYQ"
+/>
+`;

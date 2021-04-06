@@ -1,8 +1,10 @@
 import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
 import { Provider } from 'react-redux';
+import { IntlProvider } from 'react-intl';
 import { browserHistory } from 'react-router-dom';
-import AddStringPage from '../index';
+import AddStringForm from '../AddStringForm';
+import messages from '../messages';
 import configureStore from '../../../configureStore';
 
 describe('<AddStringForm />', () => {
@@ -20,7 +22,9 @@ describe('<AddStringForm />', () => {
     handleAddSpy = jest.fn();
     utils = render(
       <Provider store={store}>
-        <AddStringPage onAddString={handleAddSpy} />
+        <IntlProvider locale="en">
+          <AddStringForm handleAddString={handleAddSpy} />
+        </IntlProvider>
       </Provider>,
     );
     input = utils.getByTestId('input');
@@ -39,7 +43,29 @@ describe('<AddStringForm />', () => {
 
     const formError = utils.getByTestId('form-error');
 
-    expect(formError.textContent).toContain(`Try adding some text!`);
+    expect(formError.textContent).toEqual(messages.invalidInput.defaultMessage);
+  });
+
+  it('should clear help message after 5 seconds', () => {
+    fireEvent.change(input, { target: { value: '' } });
+    fireEvent.click(submit);
+
+    setTimeout(() => {
+      const formError = utils.queryByTestId('form-error');
+      expect(formError).toEqual(null);
+    }, 6000);
+  });
+
+  it('should call setFormError twice if invalid input', () => {
+    const setFormError = jest.fn();
+    setFormError.mockReturnValueOnce(true);
+    setFormError.mockReturnValueOnce(false);
+    fireEvent.change(input, { target: { value: '' } });
+    fireEvent.click(submit);
+
+    setTimeout(() => {
+      expect(setFormError).toHaveBeenCalledTimes(2);
+    }, 6000);
   });
 
   it('should call handleAddString on submit if there is valid input', () => {

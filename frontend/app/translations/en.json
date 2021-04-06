@@ -10,6 +10,7 @@
   "app.containers.AddStringPage.submit": "ADD",
   "app.containers.AddStringPage.success": "Nice string! Add some more!",
   "app.containers.HomePage.header": "Check out our latest strings!",
+  "app.containers.HomePage.mainLink": "Add One Now!",
   "app.containers.HomePage.subHeader": "Limited time only... Add your own string!",
   "app.containers.NotFoundPage.header": "This is the NotFoundPage container!",
   "app.containers.StringsPage.header": "Pretty sweet collection of strings right?"

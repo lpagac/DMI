@@ -8,7 +8,7 @@ import { IntlProvider } from 'react-intl';
 import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
 
-import AddStringPage, { mapDispatchToProps } from '../index';
+import { AddStringPage, mapDispatchToProps } from '../index';
 import { addString, loadStrings } from '../../App/actions';
 import configureStore from '../../../configureStore';
 
@@ -27,9 +27,6 @@ describe('<AddStringPage />', () => {
         <IntlProvider locale="en">
           <AddStringPage
             handleAddString={jest.fn()}
-            addingString={false}
-            addingStringSuccess={false}
-            addingStringError={false}
             fetchStrings={jest.fn()}
             strings={false}
             loading={false}
@@ -41,18 +38,32 @@ describe('<AddStringPage />', () => {
     expect(firstChild).toMatchSnapshot();
   });
 
-  it('should fetch the strings on mount if they do not exist', () => {
-    const fetchSpy = jest.fn();
-    const addSpy = jest.fn();
-    const { debug } = render(
+  it('Should render the strings section with current strings', () => {
+    const utils = render(
       <Provider store={store}>
         <IntlProvider locale="en">
           <AddStringPage
-            handleAddString={addSpy}
-            addingString={false}
-            addingStringSuccess={false}
-            addingStringError={false}
-            fetchStrings={fetchSpy}
+            handleAddString={jest.fn()}
+            fetchStrings={jest.fn()}
+            strings={[{ id: 'test-id', string: 'test string' }]}
+            loading={false}
+            error={false}
+          />
+        </IntlProvider>
+      </Provider>,
+    );
+
+    const stringList = utils.getByText('test string');
+    expect(stringList).not.toEqual(null);
+  });
+
+  it('Should render error message if no strings are found', () => {
+    const utils = render(
+      <Provider store={store}>
+        <IntlProvider locale="en">
+          <AddStringPage
+            handleAddString={jest.fn()}
+            fetchStrings={jest.fn()}
             strings={false}
             loading={false}
             error={false}
@@ -60,59 +71,10 @@ describe('<AddStringPage />', () => {
         </IntlProvider>
       </Provider>,
     );
-    debug();
-    expect(fetchSpy).toHaveBeenCalled();
+
+    const stringList = utils.queryByText('test string');
+    expect(stringList).toEqual(null);
   });
-
-  it('should not fetch the strings on mount if they do exist', () => {
-    const fetchSpy = jest.fn();
-    render(
-      <Provider store={store}>
-        <IntlProvider locale="en">
-          <AddStringPage
-            handleAddString={jest.fn()}
-            addingString={false}
-            addingStringSuccess={false}
-            addingStringError={false}
-            fetchStrings={fetchSpy}
-            strings={[]}
-            loading={false}
-            error={false}
-          />
-        </IntlProvider>
-      </Provider>,
-    );
-
-    expect(fetchSpy).not.toHaveBeenCalled();
-  });
-
-  // it('should not call handleAddString if input is an empty string', () => {
-  //   const submitSpy = jest.fn();
-  //   render(
-  //     <Provider store={store}>
-  //       <IntlProvider locale="en">
-  //         <AddStringPage onChangeUsername={() => { }} onSubmitForm={submitSpy} />
-  //       </IntlProvider>
-  //     </Provider>,
-  //   );
-  //   expect(submitSpy).not.toHaveBeenCalled();
-  // });
-
-  // it('should not call onSubmitForm if username is null', () => {
-  //   const submitSpy = jest.fn();
-  //   render(
-  //     <Provider store={store}>
-  //       <IntlProvider locale="en">
-  //         <AddStringPage
-  //           username=""
-  //           onChangeUsername={() => { }}
-  //           onSubmitForm={submitSpy}
-  //         />
-  //       </IntlProvider>
-  //     </Provider>,
-  //   );
-  //   expect(submitSpy).not.toHaveBeenCalled();
-  // });
 
   describe('mapDispatchToProps', () => {
     describe('handleAddString', () => {

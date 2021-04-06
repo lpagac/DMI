@@ -1,36 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
+
+import {
+  makeSelectAddingStringSuccess,
+  makeSelectAddingStringError,
+  makeSelectAddingString,
+} from 'containers/App/selectors';
 
 import LoadingIndicator from 'components/LoadingIndicator';
 import Notification from 'components/Notification';
 import messages from './messages';
 
-function FormNotification({
+export function FormNotification({
   addingString,
   addingStringSuccess,
   addingStringError,
 }) {
   if (addingString !== false) {
-    return <LoadingIndicator />;
+    return (
+      <div data-testid="loading-indicator">
+        <LoadingIndicator />
+      </div>
+    );
   }
 
   if (addingStringError !== false) {
-    const ErrorComponent = () => (
+    return (
       <Notification success={false}>
         <FormattedMessage {...messages.error} />
       </Notification>
     );
-    return <ErrorComponent />;
   }
 
   if (addingStringSuccess !== false) {
-    const SuccessComponent = () => (
+    return (
       <Notification success>
         <FormattedMessage {...messages.success} />
       </Notification>
     );
-    return <SuccessComponent />;
   }
 
   return null;
@@ -42,4 +53,12 @@ FormNotification.propTypes = {
   addingStringSuccess: PropTypes.bool,
 };
 
-export default FormNotification;
+export const mapStateToProps = createStructuredSelector({
+  addingString: makeSelectAddingString(),
+  addingStringSuccess: makeSelectAddingStringSuccess(),
+  addingStringError: makeSelectAddingStringError(),
+});
+
+const withConnect = connect(mapStateToProps);
+
+export default compose(withConnect)(FormNotification);

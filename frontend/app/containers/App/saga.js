@@ -50,21 +50,20 @@ export function* watchLoadStrings() {
 
 /** adds new string via post request to server */
 
-function* postNewString(action) {
+export function* addString(action) {
   try {
     const { id, string } = action;
-    const resp = yield call(fetch, [
-      BASE_API_URL,
-      {
-        method: 'POST',
-        cache: 'no-cache',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        redirect: 'error',
-        body: JSON.stringify({ id, string }),
+    const options = {
+      method: 'POST',
+      cache: 'no-cache',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
       },
-    ]);
+      redirect: 'error',
+      body: JSON.stringify({ id, string }),
+    };
+    const resp = yield call(request, BASE_API_URL, options);
     yield put(stringAdded(id, string, resp.strings));
   } catch (err) {
     yield put(stringAddingError(err.message));
@@ -73,20 +72,20 @@ function* postNewString(action) {
 
 /** post new string watcher */
 
-function* watchAddString() {
-  yield takeEvery(ADD_STRING, postNewString);
+export function* watchAddString() {
+  yield takeEvery(ADD_STRING, addString);
 }
 
 /** clears adding string notifications */
 
-function* clearUserNotifications() {
+export function* clearUserNotifications() {
   yield delay(3000);
   yield put(clearNotifications());
 }
 
 /** watch for result of addString (success/error) */
 
-function* watchAddStringNotifications() {
+export function* watchAddStringNotifications() {
   yield all([
     takeLatest(ADD_STRING_SUCCESS, clearUserNotifications),
     takeLatest(ADD_STRING_ERROR, clearUserNotifications),

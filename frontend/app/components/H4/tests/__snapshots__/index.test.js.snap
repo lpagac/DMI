@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<H4 /> Should render and match the snapshot 1`] = `
+<h4
+  class="H4-sc-1g3xyf4-0 dhllaO"
+/>
+`;

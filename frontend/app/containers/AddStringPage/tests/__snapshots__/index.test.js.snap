@@ -5,17 +5,10 @@ exports[`<AddStringPage /> should render and match the snapshot 1`] = `
   class="AddStringPage__AddStringWrapper-vg9nel-0 bcMePG"
 >
   <h3
-    class="H3-sc-1nwhpi5-0 dQPBtj"
+    class="H3-sc-1nwhpi5-0 kNbuJo"
   >
     <span>
       Add A String!
-    </span>
-  </h3>
-  <h3
-    class="H3-sc-1nwhpi5-0 dQPBtj"
-  >
-    <span>
-      Uh-Oh, No strings found. Try again later.
     </span>
   </h3>
   <form

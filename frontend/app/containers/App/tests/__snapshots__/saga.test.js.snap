@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddStringNotification Saga should dispatch the clearNotifications action 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      3000,
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`addString Saga should call the stringsLoadingError action if the response errors 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "http://localhost:3001/api/strings",
+      Object {
+        "body": "{\\"id\\":\\"test-id\\",\\"string\\":\\"test string\\"}",
+        "cache": "no-cache",
+        "headers": Object {
+          "Content-Type": "application/json",
+        },
+        "method": "POST",
+        "mode": "cors",
+        "redirect": "error",
+      },
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`addString Saga should dispatch the stringAdded action if it requests the data successfully 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "http://localhost:3001/api/strings",
+      Object {
+        "body": "{\\"id\\":\\"test-id\\",\\"string\\":\\"test string\\"}",
+        "cache": "no-cache",
+        "headers": Object {
+          "Content-Type": "application/json",
+        },
+        "method": "POST",
+        "mode": "cors",
+        "redirect": "error",
+      },
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`getStrings Saga should call the stringsLoadingError action if the response errors 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "http://localhost:3001/api/strings",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`getStrings Saga should dispatch the stringsLoaded action if it requests the data successfully 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "http://localhost:3001/api/strings",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;

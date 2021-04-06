@@ -16,4 +16,8 @@ export default defineMessages({
     id: `${scope}.subHeader`,
     defaultMessage: 'Limited time only... Add your own string!',
   },
+  mainLink: {
+    id: `${scope}.mainLink`,
+    defaultMessage: 'Add One Now!',
+  },
 });

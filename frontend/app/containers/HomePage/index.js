@@ -11,12 +11,15 @@ import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import H1 from 'components/H1';
 import H3 from 'components/H3';
+import StyledLink from './StyledLink';
 import messages from './messages';
 
 const Wrapper = styled.div`
   text-align: center;
   text-transform: capitalize;
   margin-top: 60px;
+  align-items: space-between;
+  height: 80vh;
 `;
 
 export default function HomePage() {
@@ -32,6 +35,9 @@ export default function HomePage() {
       <H3>
         <FormattedMessage {...messages.subHeader} />
       </H3>
+      <StyledLink exact="true" to="/strings/add">
+        <FormattedMessage {...messages.mainLink} />
+      </StyledLink>
     </Wrapper>
   );
 }

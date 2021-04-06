@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StringsSection /> Should render and match the snapshot 1`] = `
+<h3
+  class="H3-sc-1nwhpi5-0 kNbuJo"
+>
+  <span>
+    Uh-Oh, No strings found. Try again later.
+  </span>
+</h3>
+`;

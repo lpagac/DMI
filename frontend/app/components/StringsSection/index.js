@@ -10,7 +10,11 @@ import messages from './messages';
 
 function StringsSection({ loading, error, strings }) {
   if (loading) {
-    return <LoadingIndicator />;
+    return (
+      <div data-testid="loading-indicator">
+        <LoadingIndicator data-testid="loading-indicator" />
+      </div>
+    );
   }
 
   if (error !== false) {

@@ -72,13 +72,16 @@ export function addString(id, string) {
  *
  * @param {string} string the string that was added
  *
- * @return {object} An action object with a type of ADD_STRING_SUCCESS, passes string and id
+ * @param {string} strings the strings that were returned from the saga
+ *
+ * @return {object} An action object with a type of ADD_STRING_SUCCESS, passes string and id and strings
  */
-export function stringAdded(id, string) {
+export function stringAdded(id, string, strings = false) {
   return {
     type: ADD_STRING_SUCCESS,
     id,
     string,
+    strings,
   };
 }
 
